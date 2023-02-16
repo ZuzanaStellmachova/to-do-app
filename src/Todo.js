@@ -11,6 +11,7 @@ export default function Todo({addTodo}) {
         setValue("");  
     }
 
+    
     function handleChange(event) {
 
         setValue(event.target.value)
