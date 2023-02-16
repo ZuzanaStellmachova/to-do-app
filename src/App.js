@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './App.css';
+import Todo from "./Todo"
 
 export default function App() {
 const [todos, setTodos] = useState(
@@ -15,17 +16,18 @@ function addTodo(text) {
   setTodos(newTodos)
 }
 
-
   return (
     <div className="App">
-      <form>
-        <input type="search" placeholder="Type your to do"/>
-        <button type="submit">Save</button>
-      </form>
-      <div class="card">
+      
+      <div>
         <Todo 
-              todo={todo}
+              addTodo={addTodo}
         />
+      {todos.map((todo, index) => (
+        <div className="" key={index}>{todo.text}</div>
+      ))
+      }
+
       </div>
       
     </div>

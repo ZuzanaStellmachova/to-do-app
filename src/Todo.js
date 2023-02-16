@@ -1,18 +1,27 @@
-import React from "react"
+import React, { useState } from "react";
 
-export default function(todo) {
-    function formTodo({addTodo}) {
-        const [value, setValue] = useState("");
+export default function Todo({addTodo}) {
+    const [value, setValue] = useState("");
 
-        function handleSubmit() {
-            
-        }
+    function handleSubmit(event) {
+        console.log(value);
+        console.log(event);
+        event.preventDefault();  
+        addTodo(value);
+        setValue("");  
+    }
 
+    function handleChange(event) {
+
+        setValue(event.target.value)
     }
 
     return (
         <div>
-            <span>{todo.text}</span>
+            <form onSubmit={handleSubmit}>
+                <input type="search" placeholder="Type your to do" value={value} onChange={handleChange}/>
+                <button type="submit" >Save</button>
+             </form>
         </div>
     )
 }
