@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
 
-function App() {
+export default function App() {
+const [todos, setTodos] = useState(
+  [
+    {text: "First task",
+     isDone: false
+    }
+  ]
+)
+
+function addTodo(text) {
+  const newTodos = [...todos, {text}];
+  setTodos(newTodos)
+}
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <form>
+        <input type="search" placeholder="Type your to do"/>
+        <button type="submit">Save</button>
+      </form>
+      <div class="card">
+        <Todo 
+              todo={todo}
+        />
+      </div>
+      
     </div>
   );
 }
-
-export default App;
