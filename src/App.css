@@ -7,4 +7,6 @@ button {
   border-color: black;
 }
 
-
+.strikethrough {
+  text-decoration: line-through;
+}

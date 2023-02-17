@@ -1,46 +1,50 @@
 import React, { useState } from "react";
 import './App.css';
-import Todo from "./Todo"
+import TodoForm from "./TodoForm"
 
 export default function App() {
-const [todos, setTodos] = useState(
-  [
-    {text: "First task",
-     isDone: false
-    }
-  ]
-)
+  const [todos, setTodos] = useState(
+    [
+      {text: "First task",
+      isDone: false
+      }
+    ]
+  )
 
-function addTodo(text) {
-  const newTodos = [...todos, {text}];
-  setTodos(newTodos)
-}
+  function addTodo(text) {
+    const newTodos = [...todos,{ text: text, isDone: false }];
+    setTodos(newTodos)
+  }
 
-function markTodo(index) {
-  const newTodos = [...todos];
-  newTodos[index].isDone = true;
-  setTodos(newTodos)
-}
+  function markTodo(index) {
+    const newTodos = [...todos];
+    newTodos[index].isDone = !todos[index].isDone;
+    setTodos(newTodos)
+  }
 
-function removeTodo(index) {
-  const newTodos = [...todos];
-  newTodos.splice(index, 1)
-}
+  function removeTodo(index) {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos)
+  }
 
   return (
     <div className="App">
       
       <div>
-        <Todo 
+        <TodoForm 
               addTodo={addTodo}
         />
-      {todos.map((todo, index, markTodo, removeTodo) => (
-        <div className="" key={index} index={index} markTodo={markTodo}
-        removeTodo={removeTodo}>{todo.text}</div>
+      {todos.map((todo, index) => (
+        <div key={index}>
+          <div className={todo.isDone ? "strikethrough" : ""} >{todo.text}</div>
+          <button onClick={() => markTodo(index)}>✓</button>{' '}
+          <button onClick={() => removeTodo(index)}>✕</button>
+        </div>
+        
       ))
       }
-      <button onClick={markTodo()}>✓</button>{' '}
-      <button onClick={removeTodo()}>✕</button>
+      
       </div>
       
     </div>
