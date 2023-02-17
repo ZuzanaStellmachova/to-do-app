@@ -4,14 +4,12 @@ export default function Todo({addTodo}) {
     const [value, setValue] = useState("");
 
     function handleSubmit(event) {
-        console.log(value);
-        console.log(event);
         event.preventDefault();  
         addTodo(value);
         setValue("");  
     }
 
-    
+
     function handleChange(event) {
 
         setValue(event.target.value)

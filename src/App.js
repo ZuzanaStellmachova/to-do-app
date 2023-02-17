@@ -16,6 +16,17 @@ function addTodo(text) {
   setTodos(newTodos)
 }
 
+function markTodo(index) {
+  const newTodos = [...todos];
+  newTodos[index].isDone = true;
+  setTodos(newTodos)
+}
+
+function removeTodo(index) {
+  const newTodos = [...todos];
+  newTodos.splice(index, 1)
+}
+
   return (
     <div className="App">
       
@@ -23,11 +34,13 @@ function addTodo(text) {
         <Todo 
               addTodo={addTodo}
         />
-      {todos.map((todo, index) => (
-        <div className="" key={index}>{todo.text}</div>
+      {todos.map((todo, index, markTodo, removeTodo) => (
+        <div className="" key={index} index={index} markTodo={markTodo}
+        removeTodo={removeTodo}>{todo.text}</div>
       ))
       }
-
+      <button onClick={markTodo()}>✓</button>{' '}
+      <button onClick={removeTodo()}>✕</button>
       </div>
       
     </div>
