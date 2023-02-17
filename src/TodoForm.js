@@ -19,7 +19,7 @@ export default function TodoForm({addTodo}) {
         <div>
             <form onSubmit={handleSubmit}>
                 <input type="search" placeholder="Type your to do" value={value} onChange={handleChange}/>
-                <button type="submit" >Save</button>
+                <button className="bg-black text-white px-3 rounded-md hover:bg-slate-600" type="submit" >Save</button>
              </form>
         </div>
     )

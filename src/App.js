@@ -36,8 +36,8 @@ export default function App() {
               addTodo={addTodo}
         />
       {todos.map((todo, index) => (
-        <div key={index}>
-          <div className={todo.isDone ? "strikethrough" : ""} >{todo.text}</div>
+        <div key={index} className="flex gap-8">
+          <div className={`${todo.isDone ? "strikethrough" : ""}`} >{todo.text}</div>
           <button onClick={() => markTodo(index)}>✓</button>{' '}
           <button onClick={() => removeTodo(index)}>✕</button>
         </div>
