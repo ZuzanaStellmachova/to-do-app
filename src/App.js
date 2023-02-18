@@ -29,22 +29,21 @@ export default function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App font-sans max-w-sm m-auto border-solid border-teal-500 rounded-sm">
+      <h1 className="text-center text-4xl font-bold my-5">To do list</h1>
       
-      <div>
+      <div className="content-wrapper">
         <TodoForm 
-              addTodo={addTodo}
+          addTodo={addTodo}
         />
-      {todos.map((todo, index) => (
-        <div key={index} className="flex gap-8">
-          <div className={`${todo.isDone ? "strikethrough" : ""}`} >{todo.text}</div>
-          <button onClick={() => markTodo(index)}>✓</button>{' '}
-          <button onClick={() => removeTodo(index)}>✕</button>
-        </div>
-        
-      ))
-      }
-      
+        {todos.map((todo, index) => (
+          <div key={index} className="flex gap-8">
+            <div className={`${todo.isDone ? "strikethrough" : "flex-1 text-left"}`} >{todo.text}</div>
+            <button className="" onClick={() => markTodo(index)}>✓</button>{' '}
+            <button onClick={() => removeTodo(index)}>✕</button>
+          </div>
+        ))
+        }
       </div>
       
     </div>
