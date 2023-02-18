@@ -37,10 +37,14 @@ export default function App() {
           addTodo={addTodo}
         />
         {todos.map((todo, index) => (
-          <div key={index} className="flex gap-8">
-            <div className={`${todo.isDone ? "strikethrough" : "flex-1 text-left"}`} >{todo.text}</div>
-            <button className="" onClick={() => markTodo(index)}>✓</button>{' '}
-            <button onClick={() => removeTodo(index)}>✕</button>
+          <div key={index} className="flex gap-3 mb-2">
+            <button className="group w-[24px] h-[24px] border border-gray-300 hover:border-gray-400 flex-none items-center justify-center rounded-md" onClick={() => markTodo(index)}>
+              <span className={`${!todo.isDone ? "opacity-10 group-hover:opacity-30" :""}`}>✓</span></button>{' '}
+            <div className={`${todo.isDone ? "opacity-50" : ""} text-left overflow-hidden text-ellipsis relative`} >
+              {/* <div className="h-[1px] w-full bg-black absolute top-1/2"></div> */}
+              {todo.text}
+            </div>
+            <button className="w-[24px] h-[24px] ml-auto"onClick={() => removeTodo(index)}>✕</button>
           </div>
         ))
         }
