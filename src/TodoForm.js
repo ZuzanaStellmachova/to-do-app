@@ -22,7 +22,7 @@ export default function TodoForm({addTodo}) {
         <div>
             <form className="flex mb-4 gap-2" onSubmit={handleSubmit}>
                 <input className="h-[40px] flex-1 outline-none border rounded-md focus:border-gray-400 px-[16px] " type="search" placeholder="Type your to do" value={value} onChange={handleChange}/>
-                <button className="bg-black text-white px-3 rounded-md hover:bg-slate-600" type="submit" >Save</button>
+                <button className="bg-gray-700 text-white font-semibold px-3 rounded-md hover:bg-black" type="submit" >Save</button>
              </form>
         </div>
     )
