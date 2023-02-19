@@ -850,6 +850,10 @@ video {
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -983,10 +987,10 @@ button {
   text-decoration: line-through;
 }
 
-input {
+input[type='search'] {
   border-radius: 4px;
   -webkit-appearance: none;
-  -webkit-border-radius:0px;
+  -webkit-border-radius:4px;
 }
 
 .focus-within\:border-gray-400:focus-within {
