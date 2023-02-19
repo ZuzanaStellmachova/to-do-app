@@ -15,8 +15,9 @@ button {
   text-decoration: line-through;
 }
 
-/* input {
+input {
+  border-radius: 4px;
   -webkit-appearance: none;
   -webkit-border-radius:0px;
-} */
+}
 
