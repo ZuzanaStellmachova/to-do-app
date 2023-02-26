@@ -20,10 +20,20 @@ export default function TodoForm({addTodo}) {
 
     return (
         <div>
-            <form className="flex mb-4 gap-2" onSubmit={handleSubmit}>
-                <input className="h-[40px] flex-1 outline-none border rounded-[4px] bg-transparent focus:border-gray-400 px-[16px] " type="search" placeholder="Type your to do" value={value} onChange={handleChange}/>
-                {/* <button className="bg-gray-700 text-white font-semibold px-3 rounded-md hover:bg-black" type="submit" >Save</button> */}
+
+            <form className="flex mt-8 mb-2 gap-2 align-middle" onSubmit={handleSubmit}>
+                <label className="flex gap-2 p-4">      
+                    <div className="basis-1/9 align-middle ">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g opacity="0.5">
+                                <rect x="1" y="1" width="22" height="22" rx="11" stroke="#969CC1" strokeWidth="2"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <input className="h-[40px]outline-none  bg-transparent focus:border-gray-400 basis-8/9 focus-visible:outline-none" type="input" 
+                    placeholder= "Type new task..." value={value} onChange={handleChange}/>
+                </label>
              </form>
         </div>
-    )
+    )   
 }
