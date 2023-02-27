@@ -54,13 +54,13 @@ export default function App() {
         <TodoForm addTodo={addTodo}/>
         <TodoCounter todos={todos}/>
         {todos.map((todo, index) => (
-          <div key={index} className="todo-item flex gap-3 mb-3 bg-white p-4 rounded-[12px]">
+          <div key={index} className="todo-item flex gap-3 mb-3 bg-white p-3 rounded-[12px]">
               <div onClick={() => markTodo(index)} className={`flex-none items-center justify-center w-[24px] h-[24px] rounded-full block border-2 ${todo.isDone ? "bg-gray-200 border-transparent" : "border-[#2f80ed]"}`}>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M15.253 7.1109L9.5962 12.7678C8.8151 13.5488 7.54882 13.5488 6.76777 12.7678L5 11" stroke="white" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
-            <div className={`${todo.isDone ? "opacity-50" : ""} text-left overflow-hidden text-ellipsis relative`} >
+            <div className={`${todo.isDone ? "opacity-50" : ""} text-sm text-left overflow-hidden text-ellipsis relative`} >
               {todo.text}
             </div>
             <div className="todo-remove opacity-30 group-hover:opacity-100 w-[24px] h-[24px] ml-auto"onClick={() => removeTodo(index)}>

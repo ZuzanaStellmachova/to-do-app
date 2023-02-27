@@ -20,7 +20,7 @@ export default function TodoForm({addTodo}) {
         <div>
 
             <form className="flex mt-8 mb-3 gap-2 align-middle" onSubmit={handleSubmit}>
-                <label className="flex gap-2 p-4">      
+                <label className="flex gap-2 p-3">      
                     <div className="basis-1/9 align-middle ">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g opacity="0.5">
@@ -28,7 +28,7 @@ export default function TodoForm({addTodo}) {
                             </g>
                         </svg>
                     </div>
-                    <input className="h-[40px]outline-none  bg-transparent focus:border-gray-400 basis-8/9 focus-visible:outline-none" type="input" 
+                    <input className="h-[40px]outline-none text-sm bg-transparent focus:border-gray-400 basis-8/9 focus-visible:outline-none" type="input" 
                     placeholder= "Type new task..." value={value} onChange={handleChange}/>
                 </label>
              </form>
