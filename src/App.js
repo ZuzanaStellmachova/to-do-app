@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
 import TodoForm from "./TodoForm"
+import TodoCounter from "./TodoCounter"
 
 export default function App() {
   let localStorageData = JSON.parse(localStorage.getItem("todos")) 
@@ -49,10 +50,9 @@ export default function App() {
     <div className="App font-sans max-w-sm m-auto mt-[20px]">
       <h1 className="ml-4 text-left text-2xl font-bold my-5">My todos</h1>
       
-      <div className="content-wrapper">
-        <TodoForm 
-          addTodo={addTodo}
-        />
+      <div className="content-wrapper">  
+        <TodoForm addTodo={addTodo}/>
+        <TodoCounter todos={todos}/>
         {todos.map((todo, index) => (
           <div key={index} className="todo-item flex gap-3 mb-3 bg-white p-4 rounded-[12px]">
               <div onClick={() => markTodo(index)} className={`flex-none items-center justify-center w-[24px] h-[24px] rounded-full block border-2 ${todo.isDone ? "bg-gray-200 border-transparent" : "border-[#2f80ed]"}`}>

@@ -19,7 +19,7 @@ export default function TodoForm({addTodo}) {
     return (
         <div>
 
-            <form className="flex mt-8 mb-2 gap-2 align-middle" onSubmit={handleSubmit}>
+            <form className="flex mt-8 mb-3 gap-2 align-middle" onSubmit={handleSubmit}>
                 <label className="flex gap-2 p-4">      
                     <div className="basis-1/9 align-middle ">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
