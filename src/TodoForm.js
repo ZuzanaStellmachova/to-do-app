@@ -12,9 +12,7 @@ export default function TodoForm({addTodo}) {
         }
     }
 
-
     function handleChange(event) {
-
         setValue(event.target.value)
     }
 

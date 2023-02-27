@@ -17,6 +17,13 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
   }, [todos]);
+  
+  function updateTodos() {
+    const arrayIsDone = todos.filter(item => item.isDone);
+    const arrayIsNotDone = todos.filter(item => !item.isDone);
+    const all = [ ...arrayIsNotDone, ...arrayIsDone]
+    setTodos(all);
+  }
 
   function markTodo(index) {
     let newTodos = [...todos];
@@ -29,6 +36,7 @@ export default function App() {
     }
 
     setTodos(newTodos)
+    updateTodos()
   }
 
   function removeTodo(index) {
